@@ -8,7 +8,7 @@
 🌱 Learning SIEM engineering and detection rules  
 👯 Looking to collaborate on open-source security tools  
 
-## Current Stack
+## Current Stack 
 - **SIEM:** Splunk, Elastic Stack (learning)
 - **Languages:** Python, PowerShell (basics)
 - **Platforms:** TryHackMe, HackTheBox
