@@ -1,0 +1,320 @@
+
+---
+
+## **Personal Portfolio Website Skeleton**
+
+*Host free on GitHub Pages, Netlify, or Vercel*
+
+### **index.html** (Single-page layout)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Kamadi | Cybersecurity Analyst</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; 
+            color: #333; 
+            background: #f4f4f4;
+        }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        
+        /* Header */
+        header { 
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white; 
+            padding: 60px 0; 
+            text-align: center;
+        }
+        header h1 { font-size: 3rem; margin-bottom: 10px; }
+        header p { font-size: 1.3rem; opacity: 0.9; }
+        
+        /* Navigation */
+        nav { 
+            background: #333; 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+        }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; }
+        nav a { color: white; text-decoration: none; font-weight: 500; }
+        nav a:hover { color: #2a5298; }
+        
+        /* Sections */
+        section { padding: 60px 0; }
+        .bg-white { background: white; }
+        
+        h2 { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            font-size: 2.2rem;
+            color: #1e3c72;
+        }
+        
+        /* Grid Layouts */
+        .grid-3 { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        /* Cards */
+        .card { 
+            background: #f9f9f9; 
+            padding: 30px; 
+            border-radius: 8px; 
+            border-left: 4px solid #2a5298;
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        .card h3 { color: #1e3c72; margin-bottom: 15px; }
+        .status { 
+            display: inline-block; 
+            padding: 4px 12px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600;
+        }
+        .in-progress { background: #fff3cd; color: #856404; }
+        .planned { background: #d1ecf1; color: #0c5460; }
+        .completed { background: #d4edda; color: #155724; }
+        
+        /* Skills */
+        .skill-tag { 
+            display: inline-block; 
+            background: #e9ecef; 
+            padding: 5px 15px; 
+            margin: 5px; 
+            border-radius: 20px; 
+            font-size: 0.9rem;
+        }
+        
+        /* Timeline */
+        .timeline { position: relative; max-width: 800px; margin: auto; }
+        .timeline-item { 
+            padding: 20px; 
+            background: white; 
+            margin-bottom: 20px; 
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        .timeline-date { color: #666; font-size: 0.9rem; }
+        
+        /* Contact */
+        .contact-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            margin-top: 30px;
+        }
+        .contact-links a { 
+            color: #1e3c72; 
+            text-decoration: none; 
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer { 
+            background: #333; 
+            color: white; 
+            text-align: center; 
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>John Kamadi</h1>
+            <p>Aspiring SOC Analyst | Threat Hunter | Security Operations</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white">
+        <div class="container">
+            <h2>About Me</h2>
+            <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem;">
+                I'm building a career in cybersecurity from the ground up, starting with free tools and hands-on labs. 
+                Currently focused on SIEM technologies, detection engineering, and incident response. 
+                My goal is to land a Tier 1 SOC Analyst role while contributing to open-source security tools.
+            </p>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <span class="skill-tag">Splunk</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Threat Detection</span>
+                <span class="skill-tag">Log Analysis</span>
+                <span class="skill-tag">MITRE ATT&CK</span>
+                <span class="skill-tag">Windows Security</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="grid-3">
+                
+                <div class="card">
+                    <h3>🏠 Home SOC Lab</h3>
+                    <p>Building a complete Security Operations Center using Splunk Free, Sysmon, and Windows Event Forwarding. Includes custom detection rules and incident response playbooks.</p>
+                    <br>
+                    <span class="status in-progress">In Progress</span>
+                    <br><br>
+                    <a href="[GitHub Link]">View on GitHub →</a>
+                </div>
+
+                <div class="card">
+                    <h3>📝 CTF Write-Ups</h3>
+                    <p>Documented solutions to cybersecurity challenges from TryHackMe, HackTheBox, and PicoCTF. Each write-up includes technical analysis, tools used, and defensive recommendations.</p>
+                    <br>
+                    <span class="status in-progress">In Progress</span>
+                    <br><br>
+                    <a href="[GitHub Link]">View on GitHub →</a>
+                </div>
+
+                <div class="card">
+                    <h3>🚨 Detection Rules</h3>
+                    <p>Custom SIEM detection logic for common attack techniques mapped to MITRE ATT&CK. Includes Splunk SPL queries, Elastic queries, and Sigma rules.</p>
+                    <br>
+                    <span class="status planned">Planned</span>
+                    <br><br>
+                    <a href="[GitHub Link]">View on GitHub →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-white">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="grid-3">
+                
+                <div class="card">
+                    <h3>🔍 SIEM & Monitoring</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>☐ Splunk (SPL, Dashboards, Alerts)</li>
+                        <li>☐ Elastic Stack (ELK)</li>
+                        <li>☐ Microsoft Sentinel</li>
+                        <li>☐ Sysmon configuration</li>
+                        <li>☐ Windows Event Analysis</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🛡️ Security Operations</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>☐ Incident Response</li>
+                        <li>☐ Threat Hunting</li>
+                        <li>☐ IOC Analysis</li>
+                        <li>☐ MITRE ATT&CK Framework</li>
+                        <li>☐ OSINT Techniques</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>💻 Scripting & Tools</h3>
+                    <ul style="list-style: none; line-height: 2;">
+                        <li>☐ Python (Automation)</li>
+                        <li>☐ PowerShell (Forensics)</li>
+                        <li>☐ Bash (Linux)</li>
+                        <li>☐ SQL (Log queries)</li>
+                        <li>☐ Git/GitHub</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey">
+        <div class="container">
+            <h2>My Learning Journey</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">[Month Year] — Present</div>
+                    <h3>Started Cybersecurity Journey</h3>
+                    <p>Began with TryHackMe Pre-Security path. Set up GitHub portfolio and started documenting everything.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">[Target Date]</div>
+                    <h3>Complete Splunk Fundamentals 1 & 2</h3>
+                    <p>Free certification courses. Build first home lab dashboard.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">[Target Date]</div>
+                    <h3>First CTF Write-Ups Published</h3>
+                    <p>Complete 10+ challenges with full documentation.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">[Target Date]</div>
+                    <h3>CompTIA Security+ Certified</h3>
+                    <p>Baseline certification for SOC analyst roles.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">[Target Date]</div>
+                    <h3>Land First SOC Analyst Role</h3>
+                    <p>Tier 1 SOC analyst or junior security analyst position.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="text-align: center; font-size: 1.1rem;">
+                Open to collaboration, mentorship, and entry-level opportunities.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:johnkamadi18@gmail.com">📧 Email</a>
+                <a href="[LinkedIn URL]">💼 LinkedIn</a>
+                <a href="[GitHub URL]">💻 GitHub</a>
+                <a href="[TryHackMe URL]">🎯 TryHackMe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 John Kamadi. Built with persistence and coffee.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
